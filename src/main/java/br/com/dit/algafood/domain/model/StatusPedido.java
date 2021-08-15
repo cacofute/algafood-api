@@ -4,6 +4,6 @@ public enum StatusPedido {
 	CRIADO,
 	CONFIRMADO,
 	ENTREGUE,
-	CANCELADOw
+	CANCELADOw 
 
 }

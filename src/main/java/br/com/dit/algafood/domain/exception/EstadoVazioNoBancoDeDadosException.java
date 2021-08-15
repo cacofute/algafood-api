@@ -1,6 +1,6 @@
 package br.com.dit.algafood.domain.exception;
 
-public class EstadoVazioNoBancoDeDadosException extends EntidadeVazioException {
+public class EstadoVazioNoBancoDeDadosException extends EntidadeVaziaException {
 	
 	private static final long serialVersionUID = 1L;
 

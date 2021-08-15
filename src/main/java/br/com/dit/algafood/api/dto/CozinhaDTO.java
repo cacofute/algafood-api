@@ -8,7 +8,7 @@ public class CozinhaDTO {
 
     Long id;
     String nome;
-
+ 
     public CozinhaDTO(Cozinha cozinha) {
         this.id   = cozinha.getId();
         this.nome = cozinha.getNome();

@@ -5,6 +5,7 @@
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/CozinhaVaziaException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EstadoVazioException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EstadoNaoEncontradoException.java
+/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/model/CozinhaXmlWrapper.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/model/Produto.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/CozinhaRepository.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/jpa/ConsultaCozinhaMain.java
@@ -13,10 +14,12 @@
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/controller/EstadoController.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EntidadeEmUsoException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/service/ServiceDAO.java
+/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EntidadeVaziaException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/dto/EnderecoDTO.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/jpa/FormaPamentoMain.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/RestauranteRepositoryQuery.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/CidadeVazioException.java
+/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/exceptionhandler/ProblemType.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/RestauranteVazioException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/controller/CidadeController.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/IdentificadorVazioCidadeException.java
@@ -26,7 +29,6 @@
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/dto/CidadeDTO.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/infrastructure/service/RestauranteServiceImpl.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/RestauranteNaoEncontradoException.java
-/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EntidadeVazioException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/dto/CozinhaDTO.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/PermissaoRepository.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/infrastructure/service/EstadoServiceImpl.java
@@ -55,6 +57,7 @@
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/CidadeRepository.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/DAO.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/service/CidadeService.java
+/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/exceptionhandler/Problem.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/service/RestauranteService.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/jpa/InclusaoCozinhaMain.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/repositories/RestauranteRepository.java
@@ -66,4 +69,3 @@
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/IdentificadorVazioEntidadeException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/IdentificadorVazioRestauranteException.java
 /home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/domain/exception/EstadoVazioNoBancoDeDadosException.java
-/home/cristiano/desenvolvimento/projetos/algafood-api/src/main/java/br/com/dit/algafood/api/exceptionhandler/Problema.java
