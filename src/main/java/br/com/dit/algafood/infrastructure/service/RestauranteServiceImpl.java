@@ -2,15 +2,14 @@ package br.com.dit.algafood.infrastructure.service;
 
 import java.util.List;
 
-import br.com.dit.algafood.domain.exception.*;
-import br.com.dit.algafood.domain.service.CozinhaService;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.com.dit.algafood.domain.model.Cozinha;
+import br.com.dit.algafood.domain.exception.IdentificadorVazioRestauranteException;
+import br.com.dit.algafood.domain.exception.RestauranteNaoEncontradoException;
+import br.com.dit.algafood.domain.exception.RestauranteVazioException;
 import br.com.dit.algafood.domain.model.Restaurante;
-import br.com.dit.algafood.domain.repositories.CozinhaRepository;
 import br.com.dit.algafood.domain.repositories.RestauranteRepository;
+import br.com.dit.algafood.domain.service.CozinhaService;
 import br.com.dit.algafood.domain.service.RestauranteService;
 
 @Service

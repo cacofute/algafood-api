@@ -4,6 +4,8 @@ package br.com.dit.algafood.api.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import br.com.dit.algafood.api.dto.CozinhaDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
@@ -52,13 +54,13 @@ public class CozinhaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<CozinhaDTO> salvar(@RequestBody Cozinha cozinha) {
+	public ResponseEntity<CozinhaDTO> salvar(@RequestBody @Valid Cozinha cozinha) {
 		Cozinha novaCozinha = cozinhaService.salvar(cozinha);
 		return new ResponseEntity<>(new CozinhaDTO(cozinha), HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<CozinhaDTO> atualizar(@PathVariable Long id, @RequestBody Cozinha cozinha){
+	public ResponseEntity<CozinhaDTO> atualizar(@PathVariable Long id, @RequestBody @Valid Cozinha cozinha){
 		Cozinha cozinhaPesquisada = cozinhaService.buscarPorId(id);
 		BeanUtils.copyProperties(cozinha, cozinhaPesquisada, "id");
 		Cozinha cozinhaAtualizada = cozinhaService.salvar(cozinhaPesquisada);

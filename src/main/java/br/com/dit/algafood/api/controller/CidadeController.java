@@ -3,6 +3,8 @@ package br.com.dit.algafood.api.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,13 +46,13 @@ public class CidadeController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<?> salvar(@RequestBody Cidade cidade){
+	public ResponseEntity<?> salvar(@RequestBody @Valid Cidade cidade){
 		Cidade novaCidade = cidadeService.salvar(cidade);
 		return new ResponseEntity<>(new CidadeDTO(novaCidade), HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody Cidade cidade){
+	public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody @Valid Cidade cidade){
 		Cidade cidadePesquisada = cidadeService.buscarPorId(id);
 		BeanUtils.copyProperties(cidade, cidadePesquisada, "id");
 		Cidade cidadeAtualizada = cidadeService.atualizar(cidadePesquisada);

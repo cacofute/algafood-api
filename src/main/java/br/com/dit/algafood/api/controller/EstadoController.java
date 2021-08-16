@@ -3,6 +3,8 @@ package br.com.dit.algafood.api.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import br.com.dit.algafood.domain.exception.EstadoNaoEncontradoException;
 import br.com.dit.algafood.domain.exception.NegocioException;
 import org.springframework.beans.BeanUtils;
@@ -47,14 +49,14 @@ public class EstadoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<EstadoDTO> salvar(@RequestBody Estado estado){
+	public ResponseEntity<EstadoDTO> salvar(@RequestBody @Valid Estado estado){
 		Estado novoEstado = estadoService.salvar(estado);
 		return new ResponseEntity<>(new EstadoDTO(novoEstado), HttpStatus.CREATED);
 
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody Estado estado){
+	public ResponseEntity<?> atualizar(@PathVariable Long id, @RequestBody @Valid Estado estado){
 		Estado estadoPesquisada = estadoService.buscarPorId(id);
 		BeanUtils.copyProperties(estado, estadoPesquisada, "id");
 		Estado novoEstado = estadoService.atualizar(estadoPesquisada);
