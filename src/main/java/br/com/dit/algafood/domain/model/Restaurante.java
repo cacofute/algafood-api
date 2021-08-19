@@ -55,6 +55,7 @@ public class Restaurante implements Serializable{
 	@NotNull
 	@PositiveOrZero
 	@Column(nullable = false)
+	//@Multiplo(numero = 5)
 	private BigDecimal taxaFrete;
 	
 	@JsonIgnore

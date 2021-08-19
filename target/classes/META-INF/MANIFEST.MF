@@ -1,6 +1,10 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 11
+Built-By: cristiano
+Build-Jdk: 11.0.2
 Implementation-Title: algafood-api
 Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com.dit
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/algafood-api
 Created-By: Maven Integration for Eclipse
 

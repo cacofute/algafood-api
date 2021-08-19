@@ -15,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.util.ReflectionUtils;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.SmartValidator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +30,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.dit.algafood.api.dto.RestauranteDTO;
+import br.com.dit.algafood.core.validation.ValidacaoException;
 import br.com.dit.algafood.domain.model.Restaurante;
 import br.com.dit.algafood.domain.service.RestauranteService;
 
@@ -36,11 +39,13 @@ import br.com.dit.algafood.domain.service.RestauranteService;
 public class RestauranteController {
 	
 	private RestauranteService restauranteService;
+	private SmartValidator validator;
 
-	public RestauranteController(RestauranteService restauranteService) {
+	public RestauranteController(RestauranteService restauranteService, SmartValidator validator) {
 		this.restauranteService = restauranteService;
+		this.validator          = validator;
 	}
-	
+
 	@GetMapping
 	public ResponseEntity<List<RestauranteDTO>>ListarTodos(){
 		List<RestauranteDTO> restauranteDTOS = restauranteService.listarTodos()
@@ -76,9 +81,23 @@ public class RestauranteController {
 			@RequestBody Map<String, Object> campos, HttpServletRequest request){
 		Restaurante restaurante = restauranteService.buscarPorId(id);
 		merge(campos, restaurante, request);
+		validate(restaurante, "restaurante");
 		return atualizar(id, restaurante);
 	}
 	
+	/**
+	 * 
+	 * @param restaurante
+	 * @param objectName
+	 */
+	private void validate(Restaurante restaurante, String objectName) {
+		BeanPropertyBindingResult bindingResult = new BeanPropertyBindingResult(restaurante, objectName);
+		validator.validate(restaurante, bindingResult);
+		if(bindingResult.hasErrors()) {
+			throw new ValidacaoException(bindingResult);
+		}
+	}
+
 	/**
 	 * 
 	 * @param campos

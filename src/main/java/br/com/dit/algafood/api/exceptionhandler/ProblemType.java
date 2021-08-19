@@ -16,7 +16,7 @@ public enum ProblemType {
 	
 	CORPO_DA_MENSAGEM_INCOMPREENSIVEL("/corpo-da-mensagem-incompreensivel", "Corpo da mesagem incompreensível");
 	
-	
+	 
 	private String title;
 	private String uri;
 	

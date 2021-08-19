@@ -13,7 +13,7 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Problem {
-	
+	 
 	private Integer status;
 	private LocalDateTime timestamp;
 	private String type;
